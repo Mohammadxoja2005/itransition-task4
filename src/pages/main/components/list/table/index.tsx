@@ -54,11 +54,12 @@ const TABLE: FC = (): any => {
     }, [data])
 
     const deleteUsers = () => {
-        for (let i = 0; i < usersArr.length; ++i) {
+        for (let i = 0; i < data.length; ++i) {
             for (let j = 0; j < usersArr.length; ++j) {
                 if (data[i].id == usersArr[j]) {
+
                     if (data[i].username == localStorage.getItem("isUser")) {
-                        console.log("blocked user");
+
                         localStorage.removeItem("isUser");
                         localStorage.removeItem("status");
                     }
@@ -77,11 +78,12 @@ const TABLE: FC = (): any => {
 
         axios.put(`https://itransition-task4-backend-production.up.railway.app/auth/block/${usersArr}`);
 
-        for (let i = 0; i <= usersArr.length; ++i) {
-            for (let j = 0; j <= usersArr.length; ++j) {
+        for (let i = 0; i < data.length; ++i) {
+            for (let j = 0; j < usersArr.length; ++j) {
                 if (data[i].id == usersArr[j]) {
+
                     if (data[i].username == localStorage.getItem("isUser")) {
-                        console.log("blocked user");
+
                         localStorage.removeItem("isUser");
                         localStorage.removeItem("status");
                     }
