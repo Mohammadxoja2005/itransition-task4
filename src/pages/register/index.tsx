@@ -15,7 +15,7 @@ const REGISTER: FC = () => {
 
     const onSubmit = (e: any) => {
         e.preventDefault();
-        axios.post("http://localhost:3003/auth/register", { username: user, password: pass, register_time: new Date(), email: email, login_time: new Date(), status: 1 })
+        axios.post("https://itransition-task4-backend-production.up.railway.app/auth/register", { username: user, password: pass, register_time: new Date(), email: email, login_time: new Date(), status: 1 })
         navigate('/')
     }
 

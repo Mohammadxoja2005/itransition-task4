@@ -15,13 +15,13 @@ const LOGIN: FC = () => {
 
   const onSubmit = (e: any) => {
     e.preventDefault();
-    axios.post("http://localhost:3003/auth/login", { username: user, password: pass, login_time: new Date() })
+    axios.post("https://itransition-task4-backend-production.up.railway.app/auth/login", { username: user, password: pass, login_time: new Date() })
       .then((res) => {
 
         if (res.data.status === true) {
           localStorage.setItem("isUser", res.data.username);
 
-          axios.get(`http://localhost:3003/auth/status/${res.data.username}`).then((res) => {
+          axios.get(`https://itransition-task4-backend-production.up.railway.app/auth/status/${res.data.username}`).then((res) => {
             localStorage.setItem("status", res.data);
           })
 

@@ -6,7 +6,7 @@ import { graphqlRequestBaseQuery } from '@rtk-query/graphql-request-base-query';
 export const usersApi = createApi({
     reducerPath: "usersApi",
 
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3003' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://itransition-task4-backend-production.up.railway.app' }),
 
     endpoints: (builder: any) => ({
         getUsers: builder.query({

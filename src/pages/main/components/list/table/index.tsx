@@ -27,7 +27,7 @@ const TABLE: FC = (): any => {
                     value.checked = true;
                     arr.add(value.getAttribute('data-id'));
                     setUsersArr([...arr])
-                } else { 
+                } else {
                     value.checked = false;
                     arr.delete(value.getAttribute('data-id'))
                     setUsersArr([...arr])
@@ -53,6 +53,8 @@ const TABLE: FC = (): any => {
     }, [data])
 
     const deleteUsers = () => {
+        console.log(data);
+
         for (let i = 0; i < usersArr.length; ++i) {
             if (data[i].id == usersArr[i]) {
                 if (data[i].username == localStorage.getItem("isUser")) {
@@ -62,14 +64,16 @@ const TABLE: FC = (): any => {
             }
         }
 
-        axios.delete(`http://localhost:3003/auth/delete/${usersArr}`);
+        axios.delete(`https://itransition-task4-backend-production.up.railway.app/auth/delete/${usersArr}`);
 
-        window.location.reload();
+        setTimeout(() => {
+            window.location.reload();
+        }, 1000)
     }
 
     const blockUsers = () => {
 
-        axios.put(`http://localhost:3003/auth/block/${usersArr}`);
+        axios.put(`https://itransition-task4-backend-production.up.railway.app/auth/block/${usersArr}`);
 
         for (let i = 0; i < usersArr.length; ++i) {
             if (data[i].id == usersArr[i]) {
@@ -80,12 +84,17 @@ const TABLE: FC = (): any => {
             }
         }
 
-        window.location.reload();
+        setTimeout(() => {
+            window.location.reload();
+        }, 1000)
     }
 
     const unblockUsers = () => {
-        axios.put(`http://localhost:3003/auth/unblock/${usersArr}`);
-        window.location.reload();
+        axios.put(`https://itransition-task4-backend-production.up.railway.app/auth/unblock/${usersArr}`); 
+
+        setTimeout(() => {
+            window.location.reload();
+        }, 1000)
     }
 
     return (
