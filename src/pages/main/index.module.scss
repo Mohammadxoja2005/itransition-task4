@@ -1,0 +1,11 @@
+.main {
+    @apply flex ;
+    background-color: #E5E5E5;
+    max-width: 1440px;
+    margin: auto;
+} 
+
+.main_list {
+    @apply flex-col;
+    width: 100%;
+}

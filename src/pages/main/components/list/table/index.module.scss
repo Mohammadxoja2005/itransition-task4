@@ -1,0 +1,86 @@
+.table {
+  overflow: auto;
+  height: 500px;
+  width: 1000px;
+} 
+
+.btn_div {
+    display: flex;
+    margin-bottom: 10px;
+    gap: 5px;
+}
+
+.block {
+    background-color: blue;
+    color: white;
+    padding: 5px;
+} 
+
+.unblock {
+    background-color: rgb(0, 238, 255);
+    color: white;
+    padding: 5px;
+} 
+
+.delete {
+    background-color: red;
+    color: white;
+    padding: 5px;
+}
+.table_table {
+  @apply shadow_for mb-6;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.table_th:first-child {
+  @apply pl-6 cursor-pointer;
+} 
+
+.table_th {
+  width: 0px !important;
+}
+
+.table_th:nth-child(2) {
+  @apply pl-6;
+}
+
+.table_img {
+  max-width: 100px;
+}
+
+// .table_th:last-child {
+//   @apply pr-6;
+// }
+
+.table_th_input {
+
+}
+
+.table_th {
+  @apply flex-col text-secondary;
+  width: 232px;
+  text-align: start;
+  font-size: 13px;
+  font-family: pop-semibold;
+  padding: 14px 0;
+  padding-left: 54px;
+}
+
+.table_td:first-child {
+  @apply pl-6 cursor-pointer;
+}
+
+.table_td:nth-child(2) {
+  @apply pl-6;
+}
+
+.table_td {
+  @apply text-secondary;
+  width: 232px;
+  text-align: start;
+  font-size: 13px;
+  font-family: pop-regular;
+  padding: 14px 0;
+  padding-left: 54px;
+}
