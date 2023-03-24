@@ -54,8 +54,8 @@ const TABLE: FC = (): any => {
     }, [data])
 
     const deleteUsers = () => {
-        for (let i = 0; i <= usersArr.length; ++i) {
-            for (let j = 0; j <= usersArr.length; ++j) {
+        for (let i = 0; i < usersArr.length; ++i) {
+            for (let j = 0; j < usersArr.length; ++j) {
                 if (data[i].id == usersArr[j]) {
                     if (data[i].username == localStorage.getItem("isUser")) {
                         console.log("blocked user");
