@@ -40,6 +40,7 @@ const TABLE: FC = (): any => {
             value.addEventListener('click', () => {
 
                 if (value.checked) {
+                    // console.log(value.getAttribute('data-id'))
                     arr.add(value.getAttribute('data-id'));
                     setUsersArr([...arr])
                 } else {
@@ -53,13 +54,14 @@ const TABLE: FC = (): any => {
     }, [data])
 
     const deleteUsers = () => {
-        console.log(data);
-
-        for (let i = 0; i < usersArr.length; ++i) {
-            if (data[i].id == usersArr[i]) {
-                if (data[i].username == localStorage.getItem("isUser")) {
-                    localStorage.removeItem("isUser");
-                    localStorage.removeItem("status");
+        for (let i = 0; i <= usersArr.length; ++i) {
+            for (let j = 0; j <= usersArr.length; ++j) {
+                if (data[i].id == usersArr[j]) {
+                    if (data[i].username == localStorage.getItem("isUser")) {
+                        console.log("blocked user");
+                        localStorage.removeItem("isUser");
+                        localStorage.removeItem("status");
+                    }
                 }
             }
         }
@@ -75,11 +77,14 @@ const TABLE: FC = (): any => {
 
         axios.put(`https://itransition-task4-backend-production.up.railway.app/auth/block/${usersArr}`);
 
-        for (let i = 0; i < usersArr.length; ++i) {
-            if (data[i].id == usersArr[i]) {
-                if (data[i].username == localStorage.getItem("isUser")) {
-                    localStorage.removeItem("isUser");
-                    localStorage.removeItem("status");
+        for (let i = 0; i <= usersArr.length; ++i) {
+            for (let j = 0; j <= usersArr.length; ++j) {
+                if (data[i].id == usersArr[j]) {
+                    if (data[i].username == localStorage.getItem("isUser")) {
+                        console.log("blocked user");
+                        localStorage.removeItem("isUser");
+                        localStorage.removeItem("status");
+                    }
                 }
             }
         }
@@ -90,7 +95,7 @@ const TABLE: FC = (): any => {
     }
 
     const unblockUsers = () => {
-        axios.put(`https://itransition-task4-backend-production.up.railway.app/auth/unblock/${usersArr}`); 
+        axios.put(`https://itransition-task4-backend-production.up.railway.app/auth/unblock/${usersArr}`);
 
         setTimeout(() => {
             window.location.reload();
